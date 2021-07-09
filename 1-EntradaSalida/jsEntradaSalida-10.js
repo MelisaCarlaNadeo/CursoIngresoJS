@@ -12,10 +12,24 @@ function mostrarAumento()
 	Importe = txtIdImporte.value;
 	Importe = parseInt (Importe);
 
+	Descuento = prompt("Ingrese el descuento");
+
+	Resultado = Importe - (Importe * Descuento / 100);
+
+	document.getElementById("txtIdResultado").value = Resultado
+
+}
+
+/*var Importe;
+	var Descuento;
+	var Resultado;
+
+	Importe = txtIdImporte.value;
+	Importe = parseInt (Importe);
+
 	Descuento = Importe * 0.25;
 
 	Resultado = Importe - Descuento;
 
 	document.getElementById("txtIdResultado").value = Resultado
-
-}
+*/
