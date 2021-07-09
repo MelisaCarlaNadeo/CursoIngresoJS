@@ -21,25 +21,28 @@ function Rectangulo ()
 
 	rectanguloAlambre = perimetroRectangulo * 3;
 	rectanguloAlambre = parseFloat (rectanguloAlambre);
-	alert("La cantidad de alambre a comprar es: " + rectanguloAlambre);
+	alert("La cantidad de alambre necesario es: " + rectanguloAlambre);
 
 }
 function Circulo () 
 {
 	var radioTerreno;
+	var diametroCircular;
 	var perimetroCircular;
 	var circuloAlambre;
 
-	radioTerreno = txtIdRadio.value;
+	radioTerreno = document.getElementById("txtIdRadio").value;
 	radioTerreno = parseFloat (radioTerreno);
 
-	perimetroCircular = 2 * Math.PI * radioTerreno;
+	diametroCircular = radioTerreno * 2;
+	diametroCircular = parseFloat (diametroCircular);
+	perimetroCircular = Math.PI * diametroCircular;
 	perimetroCircular = parseFloat (perimetroCircular);
-
 	circuloAlambre = perimetroCircular * 3;
 	circuloAlambre = parseFloat (circuloAlambre);
+	circuloAlambre = circuloAlambre.toFixed(2);
 
-	alert("La cantidad de alambre a comprar es: " + circuloAlambre);
+	alert("La cantidad de alambre necesario es: " + circuloAlambre);
 
 }
 function Materiales () 
@@ -47,6 +50,23 @@ function Materiales ()
 	var largoTerreno;
 	var anchoTerreno;
 	var areaRectangulo;
+	var bolsaCemento;
+	var bolsaCal;
+
+	largoTerreno = txtIdLargo.value;
+	largoTerreno = parseFloat (largoTerreno);
+	anchoTerreno = txtIdAncho.value;
+	anchoTerreno = parseFloat (anchoTerreno);
+
+	areaRectangulo = largoTerreno * anchoTerreno;
+	areaRectangulo = parseFloat (areaRectangulo);
+
+	bolsaCemento = areaRectangulo * 2;
+	bolsaCemento = parseInt (bolsaCemento);
+	bolsaCal = areaRectangulo * 3;
+	bolsaCal = parseInt (bolsaCal);
+
+	alert("Se necesita comprar " + bolsaCemento + " bolsas de cemento y " + bolsaCal + " bolsas de cal.");
 
 }
 
