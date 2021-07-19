@@ -1,5 +1,5 @@
 /* Melisa Carla Nadeo División H
-TP4 IF
+TP4 SWITCH
 4.	Para el departamento de iluminación:
 Tomando en cuenta que todas las lámparas están en oferta al mismo precio de $35 pesos final.
 A.	Si compra 6 o más  lamparitas bajo consumo tiene un descuento del 50%. 
@@ -33,62 +33,62 @@ function CalcularPrecio ()
             descuento = 0;
         break;
         case 3:
-            if(marcalampara == "ArgentinaLuz")
+            switch(marcalampara)
             {
-                descuento = 0.15;
-            }
-            else if(marcalampara == "FelipeLamparas")
-            {
-                descuento = 0.10;
-            }
-            else
-            {
-                descuento = 0.05;
+                case "ArgentinaLuz":
+                    descuento = 15;
+                break;
+                case "FelipeLamparas":
+                    descuento = 10;
+                break;
+                default:
+                    descuento = 5;
+                break;
             }
         break;
         case 4:
-            if(marcalampara == "ArgentinaLuz" || marcalampara == "FelipeLamparas")
+            switch (marcalampara)
             {
-                descuento = 0.25;
-            }
-            else
-            {
-                descuento = 0.20;
+                case "ArgentinaLuz":
+                case "FelipeLamparas":
+                    descuento = 25;
+                break;
+                default:
+                    descuento = 20;
+                break;
             }
         break;
         case 5:
-            if(marcalampara == "ArgentinaLuz")
+            switch (marcalampara)
             {
-                descuento = 0.40;
-            }
-            else
-            {
-                descuento = 0.30;
+                case "ArgentinaLuz":
+                    descuento = 40;
+                break;
+                default:
+                    descuento = 30;
+                break;
             }
         break;
         default:
-            descuento = 0.50;
+            descuento = 50;
         break;
     }
     
-    preciofinal = preciototal - (preciototal * descuento);
-    preciofinal = parseFloat(preciofinal);
-    preciofinal = preciofinal.toFixed(2);
-    txtIdprecioDescuento.value = preciofinal; 
-    impuestoIIBB = preciofinal *0.10;
-    impuestoIIBB = parseFloat(impuestoIIBB);
-    impuestoIIBB = impuestoIIBB.toFixed(2);
-
+    preciofinal = preciototal - (preciototal * descuento/100);
+    
     if(preciofinal > 120)
     {
+        impuestoIIBB = preciofinal *0.10;
         precioIIBB = preciofinal + impuestoIIBB;
-        precioIIBB = parseFloat(precioIIBB);
-        precioIIBB = precioIIBB.toFixed(2);
         txtIdprecioDescuento.value = precioIIBB;
         alert("IIBB Usted pago " + impuestoIIBB);
     } 
+    else
+    {
+        txtIdprecioDescuento.value = preciofinal;
+    }
 }
-
+ 
 /*{
     var cantidadlamparas;
     var marcalampara;
@@ -165,4 +165,78 @@ function CalcularPrecio ()
         txtIdprecioDescuento.value = precioIIBB;
         alert("IIBB Usted pago " + impuestoIIBB);
     } 
+}*/
+
+/*{
+    var cantidadlamparas;
+    var marcalampara;
+    var descuento;
+    var preciototal;
+    var preciofinal;
+    var impuestoIIBB;
+    var precioIIBB;   
+    
+    cantidadlamparas = txtIdCantidad.value;
+    cantidadlamparas = parseInt(cantidadlamparas);
+    marcalampara = Marca.value;
+    preciototal = cantidadlamparas*35;
+        
+    switch(cantidadlamparas)
+    {
+        case 1:
+        case 2:
+            descuento = 0;
+        break;
+        case 3:
+            if(marcalampara == "ArgentinaLuz")
+            {
+                descuento = 15;
+            }
+            else if(marcalampara == "FelipeLamparas")
+            {
+                descuento = 10;
+            }
+            else
+            {
+                descuento = 5;
+            }
+        break;
+        case 4:
+            if(marcalampara == "ArgentinaLuz" || marcalampara == "FelipeLamparas")
+            {
+                descuento = 25;
+            }
+            else
+            {
+                descuento = 20;
+            }
+        break;
+        case 5:
+            if(marcalampara == "ArgentinaLuz")
+            {
+                descuento = 40;
+            }
+            else
+            {
+                descuento = 30;
+            }
+        break;
+        default:
+            descuento = 50;
+        break;
+    }
+    
+    preciofinal = preciototal - (preciototal * descuento/100);
+    
+    if(preciofinal > 120)
+    {
+        impuestoIIBB = preciofinal *0.10;
+        precioIIBB = preciofinal + impuestoIIBB;
+        txtIdprecioDescuento.value = precioIIBB;
+        alert("IIBB Usted pago " + impuestoIIBB);
+    } 
+    else
+    {
+        txtIdprecioDescuento.value = preciofinal;
+    }
 }*/
