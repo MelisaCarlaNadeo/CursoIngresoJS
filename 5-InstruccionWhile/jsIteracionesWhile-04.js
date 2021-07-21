@@ -1,5 +1,5 @@
 /*Melisa Carla Nadeo División H
-While Ejericio 4
+While Ejercicio 4
 al presionar el botón 
 pedir un número entre 0 y 9 inclusive.*/
 function mostrar()

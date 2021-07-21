@@ -1,5 +1,5 @@
 /* Melisa Carla Nadeo División H
-While Ejericio 5
+While Ejercicio 5
 Al presionar el botón pedir un sexo
 'f' para femenino, 'm' para masculino.*/
 function mostrar()
