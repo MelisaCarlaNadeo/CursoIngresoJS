@@ -23,6 +23,7 @@ function ComenzarIngreso ()
     while(isNaN(edadIngresada) || edadIngresada < 18 || edadIngresada > 90)
     {
         edadIngresada = prompt("Error...Reingrese su edad: ");
+        edadIngresada = parseInt(edadIngresada);
     }
     
     sexoIngresado = prompt("Ingrese su sexo f ó m: ");
@@ -35,6 +36,7 @@ function ComenzarIngreso ()
     while(isNaN(estadocivilIngresado) || estadocivilIngresado < 1 || estadocivilIngresado > 4)
     {
         estadocivilIngresado = prompt("Error... Reingrese su estado civil: ");
+        estadocivilIngresado = parseInt(estadocivilIngresado);
     }
    
     sueldobrutoIngresado = prompt("Ingrese su sueldo bruto: ");
@@ -42,6 +44,7 @@ function ComenzarIngreso ()
     while(isNaN(sueldobrutoIngresado) || sueldobrutoIngresado < 8000)
     {
         sueldobrutoIngresado = prompt("Error... Reingrese su sueldo bruto: ");
+        sueldobrutoIngresado = parseInt(sueldobrutoIngresado);
     }
     
     numerolegajoIngresado = prompt("Ingrese el número de su legajo: ");
@@ -49,6 +52,7 @@ function ComenzarIngreso ()
     while(isNaN(numerolegajoIngresado) || numerolegajoIngresado < 1000 || numerolegajoIngresado > 9999)
     {
         numerolegajoIngresado = prompt("Error... Reingrese el número de su legajo: ");
+        numerolegajoIngresado = parseInt(numerolegajoIngresado);
     }
 
     nacionalidadIngresada = prompt("Ingrese su nacionalidad con el número que corresponda: 1-argentina, 2-extranjera, 3-nacionalizado/a");
@@ -56,6 +60,7 @@ function ComenzarIngreso ()
     while(isNaN(nacionalidadIngresada) || nacionalidadIngresada < 1 || nacionalidadIngresada >3)
     {
         nacionalidadIngresada = prompt("Error... Reingrese su nacionalidad: ");
+        nacionalidadIngresada = parseInt(nacionalidadIngresada);
     }
 
     txtIdEdad.value = edadIngresada;
