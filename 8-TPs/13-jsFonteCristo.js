@@ -18,12 +18,12 @@ function NumerosPares()
  	contador = numeroIngresado;
  	cantidadPares = 0;
  	
- 	while(isNaN(numeroIngresado) || numeroIngresado < 0)
+ 	while(isNaN(numeroIngresado) && numeroIngresado < 0) 
  	{
  		numeroIngresado = prompt("Error... Reingrese un número positivo: ");
  		numeroIngresado = parseInt(numeroIngresado);
  	}
- 	
+
  	while(contador > 0)
  	{
  		contador = contador - 2;
@@ -31,50 +31,103 @@ function NumerosPares()
  	if(numeroIngresado > 0 || numeroIngresado %2 == 0)
 	{
 	 cantidadPares = numeroIngresado / 2;
+     cantidadPares = Math.trunc(cantidadPares);
 	}
-	} //que pasa con los numeros impares... me da con coma
+
+    }
 	
-	alert("La cantidad de números pares desde el número ingresado hasta el cero es: " + cantidadPares);
+	alert("La cantidad de números pares desde el número ingresado hasta el cero es: " + cantidadPares);	
 }
 
 function NumerosImpares() 
 {
   	var numeroIngresado;
-  	var contador;
-  	var cantidadImpares;
+    var contador;
+    var cantidadImpares;
 
- 	numeroIngresado = txtIdNumero.value;
- 	numeroIngresado = parseInt(numeroIngresado);
- 	contador = numeroIngresado;
- 	cantidadImpares = 1;
- 	
- 	while(isNaN(numeroIngresado) || numeroIngresado < 0)
- 	{
- 		numeroIngresado = prompt("Error... Reingrese un número positivo: ");
- 		numeroIngresado = parseInt(numeroIngresado);
- 	}
- 	
- 	while(contador > 0)
- 	{
- 		contador = contador - 1;
+    numeroIngresado = txtIdNumero.value;
+    numeroIngresado = parseInt(numeroIngresado);
+    contador = numeroIngresado;
+    cantidadImpares = 0;
+    
+    while(isNaN(numeroIngresado) && numeroIngresado < 0) 
+    {
+        numeroIngresado = prompt("Error... Reingrese un número positivo: ");
+        numeroIngresado = parseInt(numeroIngresado);
+    }
 
- 	if(numeroIngresado > 0 || numeroIngresado %2 != 0)
-	{
-	 	cantidadImpares = (numeroIngresado /2) + 0.5;
-	}
- 	}
-	
-	alert("La cantidad de números impares desde el número ingresado hasta el cero es: " + cantidadImpares);
+    while(contador > 0)
+    {
+        contador = contador - 2;
+
+    if(numeroIngresado > 0 || numeroIngresado %2 != 0)
+    {
+     cantidadImpares = numeroIngresado / 2;
+     cantidadImpares = Math.round(cantidadImpares);
+    }
+
+    }
+    
+    alert("La cantidad de números impares desde el número ingresado hasta el cero es: " + cantidadImpares); 
 }
-
 function NumerosDivisibles() 
 {
-  	
+  	var numeroIngresado;
+    var contador;
+    var numerosDivisibles;
+
+    numeroIngresado = txtIdNumero.value;
+    numeroIngresado = parseInt(numeroIngresado);
+    contador = numeroIngresado;
+    numerosDivisibles = 0;
+    
+    while(isNaN(numeroIngresado) && numeroIngresado < 0) 
+    {
+        numeroIngresado = prompt("Error... Reingrese un número positivo: ");
+        numeroIngresado = parseInt(numeroIngresado);
+    }
+
+    while(contador > 0)
+    {
+        
+        if(numeroIngresado > 0 && numeroIngresado % contador == 0)
+        {
+         numerosDivisibles++;
+        }
+        contador--;
+    }
+    
+    alert("La cantidad de números divisbles desde el número ingresado hasta el cero es: " + numerosDivisibles); 
 }
 
 function VerificarPrimo()
 {
-  	
+  	var numeroIngresado;
+    var contador;
+    var numeroPrimo;
+
+    numeroIngresado = txtIdNumero.value;
+    numeroIngresado = parseInt(numeroIngresado);
+    contador = numeroIngresado;
+    numeroPrimo = 0;
+    
+    while(isNaN(numeroIngresado) && numeroIngresado < 0) 
+    {
+        numeroIngresado = prompt("Error... Reingrese un número positivo: ");
+        numeroIngresado = parseInt(numeroIngresado);
+    }
+
+    while(contador > 0)
+    {
+        contador--
+        if(numeroIngresado > 0 && numeroIngresado % contador == 0 && numeroIngresado % )
+        {
+         numerosDivisibles++;
+        }
+        ;
+    }
+    
+    alert("La cantidad de números divisbles desde el número ingresado hasta el cero es: " + numerosDivisibles);
 }
 
 function NumerosPrimos() 
