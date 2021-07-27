@@ -70,7 +70,7 @@ function NumerosImpares()
     
     alert("La cantidad de números impares desde el número ingresado hasta el cero es: " + cantidadImpares); 
 }
-function NumerosDivisibles() 
+function NumerosDivisibles() //ver lo del 1 al 100
 {
   	var numeroIngresado;
     var contador;
@@ -97,21 +97,22 @@ function NumerosDivisibles()
         contador--;
     }
     
-    alert("La cantidad de números divisbles desde el número ingresado hasta el cero es: " + numerosDivisibles); 
+    alert("La cantidad de números divisibles desde el número ingresado hasta el cero es: " + numerosDivisibles); 
 }
 
-function VerificarPrimo()
+function VerificarPrimo() //no me da el resultado 
 {
-  	var numeroIngresado;
+    var numeroIngresado;
     var contador;
     var numeroPrimo;
+    var mensaje;
 
     numeroIngresado = txtIdNumero.value;
     numeroIngresado = parseInt(numeroIngresado);
     contador = numeroIngresado;
     numeroPrimo = 0;
-    
-    while(isNaN(numeroIngresado) && numeroIngresado < 0) 
+        
+    while(isNaN(numeroIngresado) && numeroIngresado < 1) 
     {
         numeroIngresado = prompt("Error... Reingrese un número positivo: ");
         numeroIngresado = parseInt(numeroIngresado);
@@ -119,20 +120,21 @@ function VerificarPrimo()
 
     while(contador > 0)
     {
-        contador--
-        if(numeroIngresado > 0 && numeroIngresado % contador == 0 && numeroIngresado % )
+        if(numeroIngresado > 1 && numeroIngresado % contador == 0)
         {
-         numerosDivisibles++;
+            mensaje = "no es un número primo.";
         }
-        ;
+        else
+        {
+            mensaje = "es un número primo.";
+        }    
+        contador--
     }
     
-    alert("La cantidad de números divisbles desde el número ingresado hasta el cero es: " + numerosDivisibles);
+    alert("El número ingresado " + mensaje);
 }
 
 function NumerosPrimos() 
 {
-  	
-}
-
- 	
+  
+} 	
