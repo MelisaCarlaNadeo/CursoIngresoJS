@@ -30,6 +30,7 @@ function mostrar()
 	contadorterceraEdad = 0;
 	sumaedadSolteros = 0;
 	cantidadedadSolteros = 0;
+	promedioedadSolteros = 0;
 
 	while(seguir == true)
 	{
@@ -68,7 +69,7 @@ function mostrar()
 
 		seguir = confirm("Quiere ingresar otro pasajero?");
 		
-		if(temperaturaIngresada > maximaTemperatura || primertemperaturaIngresada == true) // a- pasajero con temperatura máxima
+		if(temperaturaIngresada > maximaTemperatura || primertemperaturaIngresada == true) 
 		{
 			maximaTemperatura = temperaturaIngresada;
 			nombremayortemperatura = nombreIngresado;
@@ -94,10 +95,18 @@ function mostrar()
 		{
 			sumaedadSolteros = sumaedadSolteros + edadIngresada;
 			cantidadedadSolteros++;
+									
+			if(cantidadedadSolteros > 0)
+			{
+				promedioedadSolteros = sumaedadSolteros/cantidadedadSolteros;
+			}
+			
+			else
+			{
+				promedioedadSolteros = 0;
+			}
 		}
 	}
-
-	promedioedadSolteros = sumaedadSolteros/cantidadedadSolteros;
 
 	document.write("La persona con mayor temperatura es " + nombremayortemperatura + " con " + maximaTemperatura + "°. " + "<br>");
 	document.write("Hay " + contadorViudos + " persona/s mayor/es de edad y viuda/s." + "<br>");
